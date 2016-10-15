@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Phone No."
+        android:id="@+id/textView6PhoneNo."
+        android:layout_marginTop="37dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/textView6"
+        android:layout_alignStart="@+id/textView6" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="+254"
+        android:ems="10"
+        android:id="@+id/editText13"
+        android:layout_marginLeft="29dp"
+        android:layout_marginStart="29dp"
+        android:layout_alignTop="@+id/textView6PhoneNo."
+        android:layout_toRightOf="@+id/textView6PhoneNo."
+        android:layout_toEndOf="@+id/textView6PhoneNo." />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="PIN Code"
+        android:id="@+id/textView6"
+        android:layout_marginLeft="23dp"
+        android:layout_marginStart="23dp"
+        android:layout_below="@+id/editText13"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="27dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text=" "
+        android:ems="10"
+        android:id="@+id/editText14"
+        android:layout_alignTop="@+id/textView6"
+        android:layout_alignLeft="@+id/editText13"
+        android:layout_alignStart="@+id/editText13" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Get New PIN"
+        android:id="@+id/textView7GetNewPIN"
+        android:layout_below="@+id/editText14"
+        android:layout_toRightOf="@+id/textView6PhoneNo."
+        android:layout_toEndOf="@+id/textView6PhoneNo."
+        android:layout_marginTop="33dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Login with Facebok"
+        android:id="@+id/textView7LoginwithFacebok"
+        android:layout_below="@+id/textView7GetNewPIN"
+        android:layout_toRightOf="@+id/textView6PhoneNo."
+        android:layout_toEndOf="@+id/textView6PhoneNo."
+        android:layout_marginTop="26dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Register"
+        android:id="@+id/buttonRegister"
+        android:layout_below="@+id/textView7LoginwithFacebok"
+        android:layout_toRightOf="@+id/textView6PhoneNo."
+        android:layout_toEndOf="@+id/textView6PhoneNo."
+        android:layout_marginTop="58dp" />
+</RelativeLayout>

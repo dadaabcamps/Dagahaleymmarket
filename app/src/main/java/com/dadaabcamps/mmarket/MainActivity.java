@@ -1,16 +1,19 @@
 package com.dadaabcamps.mmarket;
 
+import android.content.Intent;
 import android.content.res.Configuration;
-import android.os.Build;
+import android.os.*;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
+import android.view.View;
+
 
 import java.util.ArrayList;
 
@@ -18,7 +21,6 @@ public class MainActivity extends AppCompatActivity {
     DrawerLayout drawerLayout;
     ActionBarDrawerToggle drawerToggle;
     NavigationView navigation;
-
 
 
     private final String recyclerViewTitleText[] = {"Fresh fruits", "Cerials",
@@ -32,14 +34,14 @@ public class MainActivity extends AppCompatActivity {
             R.drawable.bagsretail, R.drawable.metals, R.drawable.fish,
             R.drawable.peanutbutter, R.drawable.sandals};
 
-@Override
-protected void onCreate(Bundle savedInstanceState ) {
-    super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_main);
-    initRecyclerViews();
-    initInstances();
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        initRecyclerViews();
+        initInstances();
 
-}
+    }
 
     private ArrayList<ProductData> prepareData() {
         ArrayList<ProductData> av = new ArrayList<>();
@@ -56,6 +58,7 @@ protected void onCreate(Bundle savedInstanceState ) {
 
 
     }
+
     private void initInstances() {
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayShowHomeEnabled(true);
@@ -74,10 +77,15 @@ protected void onCreate(Bundle savedInstanceState ) {
                 switch (id) {
                     case R.id.navigation_item_1:
                         //Do some thing here
+                        Intent i = new Intent(MainActivity.this, LoginActivity.class);
+                        startActivity(i);
                         break;
                     case R.id.navigation_item_2:
+
                         break;
                     case R.id.navigation_item_3:
+                        Intent intentsell = new Intent(MainActivity.this, Sell_ItemActivity.class);
+                        startActivity(intentsell);
                         break;
                     case R.id.navigation_item_4:
                         break;
@@ -87,46 +95,77 @@ protected void onCreate(Bundle savedInstanceState ) {
         });
     }
 
+
     private void initRecyclerViews() {
 
         /** Inflate link the recycler view products_grid_display1 file with code
          * set properties such as size and display format */
         RecyclerView mRecyclerView = (RecyclerView) findViewById(R.id.rv_product_display);
         mRecyclerView.setHasFixedSize(true);
-        RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(getApplicationContext(), 1);
+        RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(getApplicationContext(), 2);
         mRecyclerView.setLayoutManager(mLayoutManager);
 
         /**Populate adapter with product data */
         ArrayList<ProductData> av = prepareData();
         RV_DataAdapter mAdapter = new RV_DataAdapter(getApplicationContext(), av);
         mRecyclerView.setAdapter(mAdapter);
+
+
+        mRecyclerView.addOnItemTouchListener(
+                new RV_ItemClickListener(getApplicationContext(), new RV_ItemClickListener.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(View view, int i) {
+                        switch (i) {
+                            case 0:
+                                Toast.makeText(view.getContext(), "position= " + i, Toast.LENGTH_LONG).show();
+                                break;
+                            case 1:
+                                Toast.makeText(view.getContext(), "position= " + i, Toast.LENGTH_LONG).show();
+                                break;
+                            case 2:
+                                Toast.makeText(view.getContext(), "position= " + i, Toast.LENGTH_LONG).show();
+                                break;
+                            case 3:
+                                Toast.makeText(view.getContext(), "position= " + i, Toast.LENGTH_LONG).show();
+                                break;
+                            case 4:
+                                Toast.makeText(view.getContext(), "position= " + i, Toast.LENGTH_LONG).show();
+                                break;
+                            case 5:
+                                Toast.makeText(view.getContext(), "position= " + i, Toast.LENGTH_LONG).show();
+                                break;
+
+                        }
+
+                    }
+
+                })
+        );//Ends addOnItemTouchListener
+
     }
-
-
-
-    @Override
-    protected void onPostCreate(Bundle savedInstanceState) {
-        super.onPostCreate(savedInstanceState);
-        drawerToggle.syncState();
-    }
-
-    @Override
-    public void onConfigurationChanged(Configuration newConfig) {
-        super.onConfigurationChanged(newConfig);
-        drawerToggle.onConfigurationChanged(newConfig);
-
-
-    }
+        @Override
+        protected void onPostCreate (Bundle savedInstanceState){
+            super.onPostCreate(savedInstanceState);
+            drawerToggle.syncState();
+        }
 
         @Override
-        public boolean onCreateOptionsMenu(Menu menu){
+        public void onConfigurationChanged (Configuration newConfig){
+            super.onConfigurationChanged(newConfig);
+            drawerToggle.onConfigurationChanged(newConfig);
+
+
+        }
+
+        @Override
+        public boolean onCreateOptionsMenu (Menu menu){
             //Inflate the menu; this adds items to the action bar if it is present.
             getMenuInflater().inflate(R.menu.main_menu, menu);
             return true;
         }
 
         @Override
-        public boolean onOptionsItemSelected(MenuItem item) {
+        public boolean onOptionsItemSelected (MenuItem item){
             if (drawerToggle.onOptionsItemSelected(item))
                 return true;
 
@@ -138,11 +177,10 @@ protected void onCreate(Bundle savedInstanceState ) {
             //noinspection SimplifiableIfStatement
             if (id == R.id.action_settings) {
                 return true;
-             }
+            }
             return super.onOptionsItemSelected(item);
 
-      }
-}
-
+        }
+    }
 
 

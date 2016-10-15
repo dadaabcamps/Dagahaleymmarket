@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Register"
+        android:id="@+id/textView7Register"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="29dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Phone No."
+        android:id="@+id/textView7PhoneNo."
+        android:layout_below="@+id/textView7Register"
+        android:layout_toLeftOf="@+id/textView7Register"
+        android:layout_toStartOf="@+id/textView7Register"
+        android:layout_marginTop="46dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="+254"
+        android:ems="10"
+        android:id="@+id/editText15"
+        android:layout_alignTop="@+id/textView7PhoneNo."
+        android:layout_alignLeft="@+id/textView7Register"
+        android:layout_alignStart="@+id/textView7Register" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Register"
+        android:id="@+id/buttonRegister"
+        android:layout_centerVertical="true"
+        android:layout_alignRight="@+id/textView7Register"
+        android:layout_alignEnd="@+id/textView7Register" />
+</RelativeLayout>

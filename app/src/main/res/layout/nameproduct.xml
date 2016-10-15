@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Take a Photo"
+        android:id="@+id/textView2takeaphoto"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="27dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Name of Product"
+        android:id="@+id/textView2nameofproduct"
+        android:layout_marginTop="29dp"
+        android:layout_below="@+id/textView2takeaphoto"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="23dp"
+        android:layout_marginStart="23dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Description"
+        android:id="@+id/textView2Description"
+        android:layout_below="@+id/editText"
+        android:layout_alignLeft="@+id/editText"
+        android:layout_alignStart="@+id/editText" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text=" "
+        android:ems="10"
+        android:id="@+id/editText"
+        android:layout_below="@+id/textView2nameofproduct"
+        android:layout_alignLeft="@+id/textView2nameofproduct"
+        android:layout_alignStart="@+id/textView2nameofproduct" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text=" "
+        android:ems="10"
+        android:id="@+id/editText2"
+        android:layout_below="@+id/textView2Description"
+        android:layout_alignLeft="@+id/textView2Description"
+        android:layout_alignStart="@+id/textView2Description" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Name of Supplier"
+        android:id="@+id/textView2NameofSupplier"
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/editText2"
+        android:layout_alignStart="@+id/editText2" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text=" "
+        android:ems="10"
+        android:id="@+id/editText3"
+        android:layout_below="@+id/textView2NameofSupplier"
+        android:layout_alignLeft="@+id/textView2NameofSupplier"
+        android:layout_alignStart="@+id/textView2NameofSupplier" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Moble No."
+        android:id="@+id/textView2MobleNo."
+        android:layout_below="@+id/editText3"
+        android:layout_alignLeft="@+id/editText3"
+        android:layout_alignStart="@+id/editText3" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="phone"
+        android:ems="10"
+        android:id="@+id/editText4"
+        android:layout_below="@+id/textView2MobleNo."
+        android:layout_alignLeft="@+id/textView2MobleNo."
+        android:layout_alignStart="@+id/textView2MobleNo."
+        android:text="+254" />
+
+</RelativeLayout>
